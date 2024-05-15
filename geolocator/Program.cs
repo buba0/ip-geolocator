@@ -31,7 +31,7 @@ namespace geolocator
             string input = Console.ReadLine();
             string ip = "";
 
-            // Check if input is IP address or hostname
+            // Sprawdz czy to IP czy Hostname
             if (IPAddress.TryParse(input, out IPAddress address))
             {
                 ip = input;
@@ -81,7 +81,7 @@ namespace geolocator
                     Console.WriteLine($"Kod pocztowy: {ipInfo.postal}");
                     Console.WriteLine($"Strefa czasowa: {ipInfo.timezone}");
 
-                    // Display current time in the timezone
+                    // Wyswietl czas w tej strefie czasowej
                     try
                     {
                         string windowsTimeZoneId = TZConvert.IanaToWindows(ipInfo.timezone);
@@ -95,7 +95,7 @@ namespace geolocator
                     }
 
 
-                    //Open Google Maps with location coordinates
+                    //Otworz google maps
                     try
                     {
                         string googleMapsUrl = $"https://www.google.com/maps?q={ipInfo.loc}";
